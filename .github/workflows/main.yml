@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - name: ESP-idf build
+        uses: Intake-Health/esp-idf-ci-action@release-v4.4
+        # uses: espressif/esp-idf-ci-action@release-v4.4
+      - name: Archive binaries
+        uses: papeloto/action-zip@v1
+        with:
+          files: build/bootloader/bootloader.bin build/ota_data_initial.bin build/partition_table/partition-table.bin build/WatchyOS.bin
+          dest: binaries.zip
+      - name: Upload binaries
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: binaries.zip
+          asset_name: Binaries
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "WatchyOS flashable binaries"
