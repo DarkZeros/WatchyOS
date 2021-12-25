@@ -40,7 +40,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: binaries.zip
-          asset_name: Binaries
+          asset_name: binaries.zip
           tag: ${{ github.ref }}
           overwrite: true
           body: "WatchyOS flashable binaries"

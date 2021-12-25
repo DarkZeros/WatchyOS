@@ -1,12 +1,9 @@
-//file: main.cpp
-#include "Arduino.h"
+#include "7_SEG/Watchy_7_SEG.h"
+
+Watchy7SEG watchy;
 
 void setup(){
-    Serial.begin(115200);
+  watchy.init();
 }
 
-void loop(){
-    Serial.println("loop");
-    Serial.println(millis());
-    delay(1000);
-}
+void loop(){}
