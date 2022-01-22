@@ -28,3 +28,9 @@
 [submodule "BusIO"]
 	path = components/GfxLibrary/Adafruit_BusIO
 	url = https://github.com/adafruit/Adafruit_BusIO
+[submodule "ArduinoNvs"]
+	path = components/ArduinoNvs/ArduinoNvs
+	url = https://github.com/rpolitex/ArduinoNvs
+[submodule "NTPClient"]
+	path = components/NTPClient/NTPClient
+	url = https://github.com/arduino-libraries/NTPClient
