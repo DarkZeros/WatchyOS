@@ -3,6 +3,7 @@
 nvs,      data, nvs,     ,  0x4000,
 otadata,  data, ota,     ,  0x2000,
 phy_init, data, phy,     ,  0x1000,
-app0,     app,  ota_0,   , 0x180000,
-app1,     app,  ota_1,   , 0x180000,
+app0,     app,  ota_0,   , 0x28D000,
+#app1,     app,  ota_1,   , 0x18D000,
 spiffs,   data, spiffs,  , 0x30000,
+coredump, data, coredump,,        64K

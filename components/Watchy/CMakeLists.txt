@@ -5,7 +5,9 @@ set(includedirs
 set(requires
     arduino
     WiFiManager
+    NTPClient
     ArduinoJson
+    ArduinoNvs
     DS3232RTC
     pcf8563
     GxEPD2
