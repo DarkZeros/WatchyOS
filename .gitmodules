@@ -30,7 +30,10 @@
 	url = https://github.com/adafruit/Adafruit_BusIO
 [submodule "ArduinoNvs"]
 	path = components/ArduinoNvs/ArduinoNvs
-	url = https://github.com/rpolitex/ArduinoNvs
+	url = https://github.com/DarkZeros/ArduinoNvs
 [submodule "NTPClient"]
 	path = components/NTPClient/NTPClient
 	url = https://github.com/arduino-libraries/NTPClient
+[submodule "WatchyOS"]
+	path = main
+	url = https://github.com/DarkZeros/WatchyOS_arduino
