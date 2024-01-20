@@ -3,6 +3,7 @@ set(includedirs
 )
 
 set(requires
+    nvs_flash
 )
 
 set(privrequires
@@ -17,5 +18,5 @@ idf_component_register(SRCS ${srcs} INCLUDE_DIRS ${includedirs} REQUIRES ${requi
 
 target_compile_options(${COMPONENT_TARGET} PUBLIC
  -DARDUINONVS_STRING=std::string
- -DARDUINONVS_STRING_INCLUDES=<string.h>
+ -DARDUINONVS_STRING_INCLUDES=<string>
 )

@@ -1,5 +1,6 @@
 set(includedirs
     Watchy/src
+    Watchy/examples/WatchFaces/7_SEG
 )
 
 set(requires
@@ -18,7 +19,9 @@ set(privrequires
 )
 
 set(srcs 
+    Watchy/examples/WatchFaces/7_SEG/Watchy_7_SEG.cpp
     Watchy/src/WatchyRTC.cpp 
+    Watchy/src/Display.cpp
     Watchy/src/Watchy.cpp
     Watchy/src/BLE.cpp
     Watchy/src/bma.cpp
